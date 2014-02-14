@@ -4,15 +4,50 @@
 </head>
 
 <body>
-  {{> hello}}
+	{{> navbar}}
+	<div class="ui grid">
+		<div class="sixteen wide column">
+		{{> hello}}
+		</div>
+	</div>
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-
-<div class="ui labeled facebook icon button">
-  <i class="facebook icon"></i>
-  Facebook
+<template name="navbar">
+	<div class="ui inverted pointing menu">
+  <a class="active item">
+    <i class="home icon"></i> Home
+  </a>
+  <a class="item">
+    <i class="mail icon"></i> Messages
+  </a>
+  <a class="item">
+    <i class="user icon"></i> Friends
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search..." style="font-family: 'Helvetica Neue', Helvetica, Arial, 'Segoe UI Emoji', 'Segoe UI Symbol', Symbola, EmojiSymbols;">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+    <div class="ui dropdown item">
+      Language <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item">English</a>
+        <a class="item">Russian</a>
+        <a class="item">Spanish</a>
+      </div>
+    </div>
+  </div>
 </div>
+
+</template>
+
+<template name="hello">
+	{{greeting}}
+
+	<div class="ui labeled facebook icon button">
+	  <i class="facebook icon"></i>
+	  Facebook
+	</div>
 </template>
