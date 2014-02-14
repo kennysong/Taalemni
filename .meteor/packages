@@ -8,4 +8,7 @@ autopublish
 insecure
 preserve-inputs
 semantic-ui
+accounts-base
+accounts-password
 accounts-ui
+accounts-facebook
