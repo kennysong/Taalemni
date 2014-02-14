@@ -1,6 +1,6 @@
 [
     {
-        "Category": "Critical Reading", 
+        "Category": "cr", 
         "Answer": "B", 
         "Explanation": "Because", 
         "Question": "Despite ------- on taking rare tamarins from their habitat, the illegal trade in the tiny monkeys remains -------.", 
@@ -13,7 +13,7 @@
         }
     }, 
     {
-        "Category": "Critical Reading", 
+        "Category": "cr", 
         "Answer": "C", 
         "Explanation": "Because", 
         "Question": "Representing a round world on a flat surface is impossible without some -------: the Mercator projection map shows Greenland as over ten times larger than Mexico, a country in fact only slightly smaller than Greenland.", 
@@ -26,7 +26,7 @@
         }
     }, 
     {
-        "Category": "Mathematics", 
+        "Category": "math", 
         "Answer": "C", 
         "Explanation": "Because", 
         "Question": "In a community of 416 people, each person owns a dog or a cat or both. If there are 316 dog owners and 280 cat owners, how many of the dog owners own no cat?", 
@@ -39,7 +39,7 @@
         }
     }, 
     {
-        "Category": "Critical Reading", 
+        "Category": "cr", 
         "Answer": "D", 
         "Explanation": "", 
         "Question": "Since we have many cornfields in this city, we do not have to _____ corn. ", 
@@ -52,7 +52,7 @@
         }
     }, 
     {
-        "Category": "Critical Reading", 
+        "Category": "cr", 
         "Answer": "E", 
         "Explanation": "Because", 
         "Question": "Unfortunately, many times insurance companies do not insure the person who really may ____ the insurance.", 
@@ -65,7 +65,7 @@
         }
     }, 
     {
-        "Category": "Critical Reading", 
+        "Category": "cr", 
         "Answer": "D", 
         "Explanation": "", 
         "Question": "I never can tolerate a situation which is ____, in other words, where nothing seems to go anywhere.", 
