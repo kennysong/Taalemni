@@ -101,11 +101,11 @@ Template.end.rendered = function() {
 		GameID = Session.get('GameID');
 		CurrentGame = Game.find(GameID).fetch()[0];
 
-		for (i = 1; i <= CurrentGame.QuestionIDs.length; i++) {
+		for (i = 0; i < CurrentGame.QuestionIDs.length; i++) {
 			Q = Question.find(CurrentGame.QuestionIDs[i]).fetch()[0];
 			console.log(Q)
-			console.log('.'+i+' #Option'+Q.Answer);
-			$('.'+i+' #Option'+Q.Answer).css({'color': '#5BBD72'});
+			console.log('.'+(i+1)+' .Option'+Q.Answer);
+			$('.'+(i+1)+' .Option'+Q.Answer).css({'color': '#5BBD72'});
 		}
 
 	});
