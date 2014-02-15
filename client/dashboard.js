@@ -50,3 +50,9 @@ Template.dashboard.UserLevel = function () {
 	return UserData.Level
 
 };
+
+Template.dashboard.UserBadges = function () {
+	UserData = UsersHistory.findOne({"UserID":Meteor.userId()});
+	return UserData.BadgeIDs
+
+};
