@@ -7,21 +7,21 @@
 
 <body>
 	{{> navbar}}
-
 	{{ renderPage }}
+	
 </body>
 
 <template name="navbar">
 	<div class="ui inverted pointing menu">
 	<span class="logo item"><span style="color:#6ECFF5;">SAT</span>Match</span>
-	<a class="active item">
-		<i class="home icon"></i> Home
+	<a class="item" href="/" target="_blank">
+		<i class="home icon" ></i> Home
 	</a>
-	<a class="item">
-	<i class="mail icon"></i> Messages
+	<a class="item" href="/leaderboard" target="_blank" >
+	<i class="signal icon" href="/leaderboard" target="_blank"  ></i> Leaderboards
 	</a>
-	<a class="item">
-	<i class="user icon"></i> Friends
+	<a class="item" href="/dashboard" target="_blank" >
+	<i class="users icon" href="/dashboard" target="_blank" ></i> Play!
 	</a>
 	<div class="right menu">
 	</div>
