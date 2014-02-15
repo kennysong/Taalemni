@@ -1,15 +1,13 @@
 <template name="dashboard">
 
-  <div class="ui inverted page grid masthead segment" style="background: transparent;">
+  <div class="ui page grid masthead segment" style="background: transparent;">
     <div class="column">
-      <img class="player rounded image dashboard-user-image" src="{{ UserPic }}"?
+      <img class="player circular image dashboard-user-image" src="{{ UserPic }}"?
       style=" margin-bottom: 2%;">
-      <div>
-        <h1 class="ui inverted header" style="color: black;">
-        {{ UserName }}
-        </h1>
-        <p style="color: black;">Badeges Won: None Yet</p>
-      </div>
+      <h1 class="ui inverted header" style="color: black;">
+      {{ UserName }}
+      </h1>
+      <p style="color: black;">Badges Won: None Yet</p>
     </div>
   </div>
 
@@ -21,17 +19,17 @@
       <div class="ui three column center aligned stackable divided grid">
 
         <div class="column">
-          <a class="ui circular green button" ;"> Critical Reading </a>
+          <a class="ui rounded green button" ;"> Critical Reading </a>
           <p>Correct %</p>
         </div>
 
         <div class="column">
-          <a class="ui circular red button" ;">Mathematics</a>
+          <a class="ui rounded red button" ;">Mathematics</a>
           <p>Correct %</p>
         </div>
 
         <div class="column">
-          <a class="ui circular blue button">Writing</a>
+          <a class="ui rounded blue button">Writing</a>
           <p>Correct %</p>
         </div>
 
