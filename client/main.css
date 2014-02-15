@@ -108,6 +108,12 @@ h1 {
 	font-weight: 100;
 	font-size: 22px;
 	position: relative;
-	top: 125px;
+	top: 150px;
 	margin: 0px -50px;
+}
+
+.logo-big {
+	font-family: "Questrial", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 88px;
+	margin-top: 100px;
 }

@@ -1,17 +1,22 @@
 <template name="home">
-	<center>
-	{{greeting}}
+	<center style="margin-top: 150px;">
+	{{> greeting}}
 	{{> facebook}}
 	{{> links}}
 	</center>
 </template>
 
+<template name="greeting">
+<h1 class='logo-big'><i class="fa fa-lightbulb-o"></i> <span style="color:#6ECFF5;">SAT</span>Match</h1>
+<h2 style="color: #E96633;font-size: 34px;margin-bottom: 60px;margin-top: -25px;">Game the SAT.</h2>
+</template>
+
 <template name="facebook">
 	<center>
 		<div class="spacing">
-			<div id="facebook-login" class="ui labeled facebook icon button">
+			<div id="facebook-login" class="ui labeled facebook massive icon button">
 	  			<i class="facebook icon"></i>
-	  				Facebook
+	  				Login with Facebook
 			</div>
 		</div>
 	</center>
@@ -22,16 +27,10 @@
 		<div> </div>
 		<div class="ui breadcrumb">
 			<div class="spacing">
-				<a href="/about" target="_blank" >
-					<div class="ui blue button">
-						About
-					</div>
-				</a>
-				<div class="divider"> | </div>
+				<a href="/about" target="_blank"><div class="ui blue large button" style="font-weight:100;">About SATMatch</div></a>
+				<div class="divider"></div>
 				<a href="http://sat.collegeboard.org/home">
-					<div class="ui blue button">
-						SAT
-					</div>
+					<div class="ui blue large button" style="font-weight:100;">CollegeBoard</div>
 				</a>
 			</div>
 		</div>
