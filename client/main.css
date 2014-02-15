@@ -61,3 +61,7 @@ body {
 	border-color:#ffffff;
 	float:centre;
 }
+
+#spacing {
+	margin: 50px;
+}
