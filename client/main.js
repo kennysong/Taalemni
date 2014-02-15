@@ -1,8 +1,8 @@
-Template.hello.greeting = function () {
+Template.home.greeting = function () {
 	return "Welcome to SATisfaction.";
 };
 
-Template.hello.events({
+Template.home.events({
 	'click #facebook-login' : function () {
 		Meteor.loginWithFacebook({
 			requestPermissions: ['email', 'user_location', 'user_friends', 'read_friendlists']

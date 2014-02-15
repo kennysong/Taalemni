@@ -5,11 +5,8 @@
 
 <body>
 	{{> navbar}}
-	<div class="ui grid">
-		<div class="sixteen wide column">
-		{{> hello}}
-		</div>
-	</div>
+
+	{{ renderPage }}
 </body>
 
 <template name="navbar">
@@ -28,11 +25,4 @@
 	</div>
 </template>
 
-<template name="hello">
-	{{greeting}}
 
-	<div id="facebook-login" class="ui labeled facebook icon button">
-	  <i class="facebook icon"></i>
-	  Facebook
-	</div>
-</template>
