@@ -152,9 +152,14 @@ user_list = [
 
 UsersHistory = new Meteor.Collection("users_history")
 
+if (UsersHistory.length > 0) {
+    return -1;
+}
 
+else {
     for (var i = 0; i < user_list.length; i++) {
-        console.log(user_list[i]);
-        UsersHistory.insert(user_list[i]);
+    console.log(user_list[i]);
+    UsersHistory.insert(user_list[i]);
     }
+}
 

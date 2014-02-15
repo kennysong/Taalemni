@@ -13,10 +13,6 @@ Template.home.events({
 			Meteor.call('FindFriends', function(error) {  
 				console.log(error);
 		    });
-			Deps.autorun(function(){
-				Meteor.subscribe("userData");
-				console.log("Subscribing!");
-			});
 		});
 	}
 });
