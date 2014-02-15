@@ -52,7 +52,6 @@ Template.dashboard.UserLevel = function () {
 };
 
 Template.dashboard.UserBadges = function () {
-<<<<<<< HEAD
 	var badges = [{"class": "star circular icon link", "title": "You managed to defeat an opponent!"},
 	{'class': "heart circular icon link", 'title': "You bested 5 foes"}]
 	var UserData = Meteor.user();
@@ -64,7 +63,5 @@ Template.dashboard.UserBadges = function () {
 		return [[badges[0]]];
 	};	
 };
-=======
-	return Meteor.user().BadgeIDs
->>>>>>> 2adb69c00a94f759aeeba62684592af6705a333d
+
 
