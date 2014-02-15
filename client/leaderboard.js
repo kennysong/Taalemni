@@ -3,8 +3,8 @@ Template.leaderboard.heading = function () {
 };
 
 
-Template.leaderboard.users = function () {
-	return Users.find({}, {sort: {Level: -1}});
+Template.list.users = function () {
+	return UsersHistory.find({}, {sort: {Level: -1}});
 
 };
 
