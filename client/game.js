@@ -99,7 +99,7 @@ Template.game.rendered = function () {
 			Meteor.clearInterval(timerr);
 
 			if (Session.get('QuestionNumber') == 6) {
-				Meteor.Router.to('/end');
+				Meteor.Router.to('/end/'+GameID);
 				return 0;
 			}
 			NextQuestion();

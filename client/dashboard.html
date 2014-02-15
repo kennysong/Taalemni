@@ -11,7 +11,10 @@
       Level: <span class="ui large teal rounded label">{{UserLevel}}</span> 
       </p>
       <p style="color: black;">
-      Badges Won: {{UserBadges}}
+        Badges Won: 
+      {{#each UserBadges}}
+        <i class="{{class}}" title="{{title}}"></i>
+      {{/each}}
       </p>
     </div>
   </div>
@@ -25,17 +28,17 @@
 
         <div class="column">
           <a class="game ui fluid rounded green button"> Critical Reading </a>
-          <p>{{ReadWinPercentage}} Correct</p>
+          <p>{{ReadWinPercentage}}</p>
         </div>
 
         <div class="column">
           <a class="game ui fluid rounded red button">Mathematics</a>
-          <p>{{MathWinPercentage}} Correct</p>
+          <p>{{MathWinPercentage}}</p>
         </div>
 
         <div class="column">
           <a class="game ui fluid rounded blue button">Writing</a>
-          <p>{{WritWinPercentage}} Correct</p>
+          <p>{{WritWinPercentage}}</p>
         </div>
 
       </div>

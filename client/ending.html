@@ -1,3 +1,99 @@
 <template name="end">
-The end!
+
+<div class="ui grid">
+  <div class="two wide column">
+
+  </div>
+
+  
+	  <div class="four wide column">
+		  <center>
+			  <div class="ui segment">
+			  	<img class="circular ui image" src="{{ SelfPic }}" style="margin-bottom: 25px;">
+				<p class="score ui blue label">{{ SelfScore }} </p>
+			  	<p class="">{{ SelfName }}</p>
+		    </div>
+	    </center>
+	  </div>
+	
+
+	  <div class="four wide column" style="margin-top: 140px;">
+		  <center>
+		    <div class="ui segment" style="font-size: 40px;font-weight: 100;padding: 20px;font-family:'Questrial'">
+		    {{ Message }}
+		    </div>
+	    </center>
+	  </div>
+
+	  <div class="four wide column">
+		  <center>
+		    <div class="ui segment">
+			    <img class="circular ui image" src="{{ OpponentPic }}" style="margin-bottom: 25px;">
+				<p class="score ui orange label" style="margin-top: 20px">{{ OpponentScore }}</p>
+			  	<p class="">{{ OpponentName }}</p>
+		    </div>
+	      </center>
+	  </div>
+
+    <div class="two wide column">
+  	</div>
+</div>
+
+<h2 style="text-align:center">Game Questions</h2>
+
+{{#each Questions}}
+
+<hr style="margin-bottom: 25px">
+
+<center>
+	<div class="question ui fluid segment">
+		<h3 style="font-weight:100;">{{ index }}. {{ Question }}</h3>
+	</div>
+</center>
+
+
+<div class="answers ui stackable three items {{ index }}" style="display: block;">
+  <div id="OptionA" class="item OptionA">
+    <div class="content">
+      <div class="meta">A</div>
+      <h1>{{ Options.A }}</h1>
+    </div>
+  </div>
+
+  <div id="OptionB" class="item OptionB">
+    <div class="content">
+      <div class="meta">B</div>
+       <h1>{{ Options.B }}</h1>
+    </div>
+  </div>
+
+  <div id="OptionC" class="item OptionC">
+    <div class="content">
+      <div class="meta">C</div>
+       <h1>{{ Options.C }}</h1>
+    </div>
+  </div>
+
+
+  <div id="OptionD" class="item OptionD">
+    <div class="content">
+      <div class="meta">D</div>
+       <h1>{{ Options.D }}</h1>
+    </div>
+  </div>
+
+  <div id="OptionE" class="item OptionE">
+    <div class="content">
+      <div class="meta">E</div>
+       <h1>{{ Options.E }}</h1>
+    </div>
+  </div>
+
+
+</div>
+
+{{/each}}
+
+
+
 </template>
