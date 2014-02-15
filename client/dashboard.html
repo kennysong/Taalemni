@@ -1,0 +1,39 @@
+<template name="dashboard">
+  {{> playerinfo}}
+  {{> selectionbutton}}
+  
+
+</template>
+
+<template name="playerinfo">
+	<center>
+		<img class="player circular ui image dashboard-user-image" src="https://graph.facebook.com/kenny.ysong/picture?width=150&amp;height=150" style="
+    margin-bottom: 2%;">
+    </center>
+</template>
+
+<template name="selectionbutton">
+	<center>
+  		<a href="#" class="ui green button" id="crit-read" style="margin-left: .5%;margin-right: .5%;">Critical Reading
+  		</a>
+  		<a class="ui red button" style="margin-left: .5%;margin-right: .5%;">Mathematics</a>
+ 		<a class="ui blue button" style="margin-left: .5%;margin-right: .5%;">Writing</a>
+  </center>
+</template>
+
+<template name = "popup" id="popup">
+<center>
+  <div class="ui vertical segment">
+  <div class="ui huge header">WHO DO YOU WANT OT PLAY WITH?</div>
+</div>
+</center>
+
+<center>
+<div class="ui massive buttons">
+  <div class="ui massive button">FRIENDS</div>
+  <div class="or"></div>
+  <div class="ui massive positive button">ANYONE</div>
+</div>
+
+</center>
+</template>

@@ -85,3 +85,13 @@ body {
 h1 {
 	font-weight: 100;
 }
+
+.dashboard-user-image{
+	border-color:#ffffff;
+	float:centre;
+}
+
+#spacing {
+	margin: 50px;
+}
+
