@@ -56,3 +56,8 @@ body {
 	color: rgb(151, 151, 151);
 	margin-top: 5px;
 }
+
+.the-image{
+	border-color:#ffffff;
+	float:centre;
+}

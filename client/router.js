@@ -4,5 +4,6 @@ Meteor.Router.add({
     Session.set('GameID', id);
     return 'game'
   },
+  '/dashboard':'dashboard',
   '*': 'error'
 });
