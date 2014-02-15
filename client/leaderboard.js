@@ -10,15 +10,16 @@ function getRandomInt(min,max){
 	return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-function friendInsert(array){
-	friendlist = []
-	for (var i = 0; i < 20; i++)
-		friendlist.push(array[i]["name"], getRandomInt(1,41));
-	return friendlist
+function friendInsert(array){ /*Meteor.user*/
+	for (var i = 0; i < 30; i++)
+		if (array.find({"profile":{"name":array().Friends[i].name}}).count() == 0) {
+			id = array.insert({"profile":{"name":array().Friends[i]}, "Level":getRandomInt(1,41)});
+		};
+};
 
-}
 Template.list.users = function(){
-	return friendInsert(Meteor.user().Friends);
+	friendInsert(Meteor.user);
+	return Meteor.users.find({}, {sort: {Level: -1}});
 };
 
 
