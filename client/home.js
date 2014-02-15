@@ -1,5 +1,5 @@
 Template.home.greeting = function () {
-	return "Welcome to SATisfaction.";
+	return "Welcome to SATMatch.";
 };
 
 Template.home.events({
