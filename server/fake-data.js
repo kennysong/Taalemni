@@ -110,7 +110,7 @@ if (Game.find().count() == 0) {
 
 user_list = [
     {
-        "UserID":"1",
+        "UserID":"G98ZY4HE9QD3L8ccn",
         "Level":"3",
         "BadgeIDs":["323", "4332"],
         "MathWin":"10",
@@ -145,11 +145,11 @@ user_list = [
 
 ]
 
-Users = new Meteor.Collection("users")
+UsersHistory = new Meteor.Collection("users_history")
 
-if (Users.find().count() == 0) {
+if (UsersHistory.find().count() == 0) {
     for (var i = 0; i < user_list.length; i++) {
         console.log(user_list[i]);
-        Users.insert(user_list[i]);
+        UsersHistory.insert(user_list[i]);
     }
 }
