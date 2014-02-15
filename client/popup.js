@@ -5,9 +5,8 @@ Template.popup.SelfPic = function () {
 Template.popup.events({
 	'click #with-friends' : function(){
 		console.log("clicked friends!");
-		Meteor.
 		$("#friend-list").slideToggle("slow");
-		friendlibrary = Meteor.user().Friends
+		//friendlibrary = Meteor.user().Friends
 	},
 
 	'click #no-friends' : function(){
