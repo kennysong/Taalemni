@@ -10,17 +10,15 @@ Template.hello.events({
 			if (err) {
 				Session.set('errorMessage', err.reason || 'Unknown error');
 			}
+			console.log(Meteor.user())
+
+			Meteor.call('FindFriends', function(error, friends) {  
+				id = Meteor.user()._id;
+				console.log("Logged in: " + id)
+				Meteor.users.update(id, {$set: {'BadgeIDs': [], 'Level': 1, 'MathWin': 0, 'MathLose': 0, 
+					'ReadingWin': 0, 'ReadingLose': 0, 'WritingWin': 0, 'WritingLose': 0, 'Friends':friends['data']}});
+		    });
+
 		});
 	}
-});
-
-Meteor.autorun(function() {
-  if (Meteor.user()) {
-    // do something when they've just logged in.
-    Meteor.call('FindFriends', function(error, friends) {  
-		id = Meteor.user()._id;
-		Meteor.users.update(id, {$set: {'BadgeIDs': [], 'Level': 1, 'MathWin': 0, 'MathLose': 0, 'ReadingWin': 0, 'ReadingLose': 0, 'WritingWin': 0, 'WritingLose': 0, 'Friends':friends}});
-    });
-    
-  }
 });
