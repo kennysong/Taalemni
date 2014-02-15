@@ -1,0 +1,54 @@
+<template name="popup">
+
+<center>
+	<div class="ui vertical segment">
+	<img class="circular ui image" src= {{SelfPic}} />
+  <div class="ui huge header">WHO DO YOU WANT TO PLAY WITH?</div>
+</div>
+</center>
+<center>
+	<i class="massive smile icon" style="margin-left: .5%;"></i>
+	<i class="massive globe icon"></i>
+</center>
+
+<center>
+<div class="ui massive buttons">
+  <div class="ui massive positive button" id="with-friends">FRIENDS</div>
+  <div class="or"></div>
+  <div class="ui massive negative button" id="no-friends">ANYONE</div>
+</div>
+</center>
+
+<center>
+  <div class="ui one column divided grid" style = "max-width: 360px ">
+  <div class="row">
+    <div class="column">
+  	<div class="ui vertical fluid menu">
+  	<div class="item">
+      <div class="ui icon input">
+        <input placeholder="Find THAT friend!" type="text">
+        <i class="search icon"></i>
+      </div>
+    <a class="active teal item">
+      Friend One
+      <div class="ui teal label">12</div>
+    </a>
+    <a class="item">
+      Friend Two
+      <div class="ui label">7</div>
+    </a>
+    <a class="item">
+      Friends Three
+      <div class="ui label">4</div>
+    </a>
+  </div>
+
+  
+  </div>
+</div>
+</div>
+</div>
+
+</center>
+
+</template>

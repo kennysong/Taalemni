@@ -41,6 +41,17 @@ Meteor.methods({
 	    console.log(fb)
 	    var data = fb.FindFriends();
 	    console.log(data)
-	    return data;
-	}
+
+        id = Meteor.user()._id;
+        console.log("Logged in: " + id)
+        Meteor.users.update(id, {$set: {'BadgeIDs': [], 'Level': 1, 'MathWin': 0, 'MathLose': 0, 
+            'ReadingWin': 0, 'ReadingLose': 0, 'WritingWin': 0, 'WritingLose': 0, 'Friends':data['data']}});
+    }
+});
+
+//Publish the custom properties fields in Mongo
+Meteor.publish("userData", function() {
+    return Meteor.users.find({_id : this.userId}, {fields: {
+        'BadgeIDs': 1,'Level': 1,'MathWin': 1,'MathLose':1, 'ReadingWin':1,'ReadingLose':1, 'WritingWin':1, 'WritingLose':1,'Friends':1
+    }});
 });

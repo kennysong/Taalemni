@@ -88,8 +88,10 @@ h1 {
 }
 
 .dashboard-user-image{
-	border-color:#ffffff;
-	float:centre;
+	margin-bottom: 2%;
+    margin-left: 4%;
+    float: left;
+">
 }
 
 #spacing {
