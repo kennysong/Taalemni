@@ -1,6 +1,7 @@
 <template name="dashboard">
   {{> playerinfo}}
   {{> selectionbutton}}
+  {{> popup}}
   
 
 </template>
@@ -23,8 +24,9 @@
 
 <template name = "popup" id="popup">
 <center>
-  <div class="ui vertical segment">
-  <div class="ui huge header">WHO DO YOU WANT OT PLAY WITH?</div>
+  <div class="ui vertical segment" >
+  <div style="margin-top: .5%; margin-bottom:.5%;"
+  class="ui huge header">WHO DO YOU WANT OT PLAY WITH?</div>
 </div>
 </center>
 
@@ -34,6 +36,9 @@
   <div class="or"></div>
   <div class="ui massive positive button">ANYONE</div>
 </div>
+</center>
+
+<center>
 
 </center>
 </template>
