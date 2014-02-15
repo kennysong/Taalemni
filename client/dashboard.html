@@ -1,20 +1,41 @@
 <template name="dashboard">
-  {{> playerinfo}}
-  {{> selectionbutton}}
-</template>
 
-<template name="playerinfo">
-	<center>
-		<img class="player circular ui image dashboard-user-image" src="https://graph.facebook.com/kenny.ysong/picture?width=150&amp;height=150" style="
-    margin-bottom: 2%;">
-    </center>
-</template>
+  <div class="ui inverted page grid masthead segment" style="background: transparent;">
+    <div class="column">
+      <img class="player rounded image dashboard-user-image" src="https://graph.facebook.com/kenny.ysong/picture?width=150&amp;height=150" style=" margin-bottom: 2%;">
+      <div>
+        <h1 class="ui inverted header" style="color: black;">
+        Kenny Song
+        </h1>
+        <p style="color: black;">Badeges Won: None</p>
+      </div>
+    </div>
+  </div>
 
-<template name="selectionbutton">
-	<center>
-  		<a class="ui green button" style="margin-left: .5%;margin-right: .5%;">Critical Reading
-  		</a>
-  		<a class="ui red button" style="margin-left: .5%;margin-right: .5%;">Mathematics</a>
- 		<a class="ui blue button" style="margin-left: .5%;margin-right: .5%;">Writing</a>
-  </center>
+
+
+<div class="ui page grid overview segment" style="background: transparent;">
+    <div class="ui two wide column"></div>
+    <div class="twelve wide column">
+      <div class="ui three column center aligned stackable divided grid">
+
+        <div class="column">
+          <a class="ui circular green button" ;"> Critical Reading </a>
+          <p>Correct %</p>
+        </div>
+
+        <div class="column">
+          <a class="ui circular red button" ;">Mathematics</a>
+          <p>Correct %</p>
+        </div>
+
+        <div class="column">
+          <a class="ui circular blue button" ;">Writing</a>
+          <p>Correct %</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </template>
