@@ -6,10 +6,9 @@ Template.dashboard.UserPic = function () {
 }
 
 
-//UsersHistory = new Meteor.Collection("users_history")
-
 
 Template.dashboard.UserGameData = function () {
 	return Meteor.userId()
+	//return UsersHistory.find({Meteor.userId()});
 
 };
