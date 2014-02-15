@@ -1,4 +1,54 @@
 body {
 	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	background: url("/images/bg.jpg");
 }
 
+.question {
+	text-align: center;
+	font-weight: 100 !important;
+	font-size: 26px;
+	width: 700px !important;
+}
+
+.item {
+	min-height: 0px !important;
+	text-align: center !important;
+}
+
+.answers {
+	margin: 50px auto !important;
+	max-width: 900px !important;
+}
+
+#timer {
+	font-weight: 100;
+	color: rgb(151, 151, 151);
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.player {
+	width: 150px !important;
+	margin: 30px;
+}
+
+.ui.segment:after {
+	display: inline !important;
+}
+
+.score {
+	font-size: 20px !important;
+	margin: 0px -15px !important;
+}
+
+.progress {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 90% !important;
+}
+
+#progress-text {
+	text-align: center !important;
+	color: rgb(151, 151, 151);
+	margin-top: 5px;
+}
