@@ -8,7 +8,7 @@ Template.dashboard.UserPic = function () {
 
 
 Template.dashboard.UserGameData = function () {
-	return Meteor.userId()
-	//return UsersHistory.find({Meteor.userId()});
+	//return Meteor.userId()
+	return UsersHistory.findOne({"UserID":Meteor.userId()});
 
 };
