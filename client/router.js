@@ -6,5 +6,6 @@ Meteor.Router.add({
     return 'game'
   },
   '/dashboard':'dashboard',
+  '/leaderboard': 'leaderboard',
   '*': 'error'
 });
