@@ -97,6 +97,11 @@ Template.game.rendered = function () {
 			console.log('Next Question!')
 			console.log('clear timer 2')
 			Meteor.clearInterval(timerr);
+
+			if (Session.get('QuestionNumber') == 6) {
+				Meteor.Router.to('/end');
+				return 0;
+			}
 			NextQuestion();
 			Game.update(GameID, {$set: {'ADone':0, 'BDone':0}});
 		}
