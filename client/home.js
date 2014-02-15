@@ -1,6 +1,4 @@
-Template.home.greeting = function () {
-	return "Welcome to SATMatch.";
-};
+
 
 Template.home.events({
 	'click #facebook-login' : function () {
