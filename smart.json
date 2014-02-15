@@ -1,6 +1,7 @@
 {
   "packages": {
     "semantic-ui": {},
-    "npm": {}
+    "npm": {},
+    "router": {}
   }
 }
