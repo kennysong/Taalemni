@@ -92,7 +92,8 @@ game_list = [
 	{
 		"QuestionIDs": ["x3h4PaqMpJFR7t5KA", "nPDRnXEztBWfMmqxx", "9S4WmuqGXWfJNGNBy", "qnHRs5ufFY4ZCBWgN", "uDYDgfEXr8xZiCJBp", "95b87ZcNqZ2c636Hg"],
 		"UserIDs": ["nnX2HQ4qnvCDoNKou", "9jNFCCh5EHhJcgFfH"],
-		"Score": 0
+		"ScoreA": 0,
+		"ScoreB": 0
 	}
 ];
 
