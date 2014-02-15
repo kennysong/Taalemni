@@ -106,3 +106,50 @@ if (Game.find().count() == 0) {
     }
 
 }
+
+
+user_list = [
+    {
+        "UserID":"1",
+        "Level":"3",
+        "BadgeIDs":["323", "4332"],
+        "MathWin":"10",
+        "MathLose":"0",
+        "ReadingWin":"5",
+        "ReadingLose":"5",
+        "WritingWin":"3",
+        "WritingLose":"7",
+    },
+    {
+        "UserID":"2",
+        "Level":"19",
+        "BadgeIDs":["33", "433"],
+        "MathWin":"10",
+        "MathLose":"0",
+        "ReadingWin":"6",
+        "ReadingLose":"4",
+        "WritingWin":"9",
+        "WritingLose":"1"
+    },
+    {
+        "UserID":"3",
+        "Level":"5",
+        "BadgeIDs":["3", "32"],
+        "MathWin":"9",
+        "MathLose":"1",
+        "ReadingWin":"5",
+        "ReadingLose":"5",
+        "WritingWin":"2",
+        "WritingLose":"8"
+    }
+
+]
+
+Users = new Meteor.Collection("users")
+
+if (Users.find().count() == 0) {
+    for (var i = 0; i < user_list.length; i++) {
+        console.log(user_list[i]);
+        Users.insert(user_list[i]);
+    }
+}
