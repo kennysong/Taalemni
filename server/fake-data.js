@@ -113,7 +113,7 @@ user_list = [
         "UserID":"G98ZY4HE9QD3L8ccn",
         "Level":"3",
         "BadgeIDs":["323", "4332"],
-        "MathWin":"10",
+        "MathWin":"0",
         "MathLose":"0",
         "ReadingWin":"5",
         "ReadingLose":"5",
