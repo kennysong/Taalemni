@@ -1,8 +1,8 @@
 <head>
-  <title>SATisfaction</title>
+  <title>SATMatch</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-
+	<link rel="icon" href="/images/favicon.png" type="image/png" />
 </head>
 
 <body>
@@ -12,20 +12,25 @@
 </body>
 
 <template name="navbar">
-	<div id="nav" class="ui fixed transparent inverted pointing main menu">
-	<span class="logo item"><span style="color:#6ECFF5;">SAT</span>Match</span>
-	<a class="item" href="/" target="_blank">
-		<i class="home icon" ></i> Home
+	<div id="nav" class="ui fixed inverted pointing main menu">
+	<span class="logo item" style="font-size: 24px;height: 0px;position: relative;bottom: 13px;"><i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;<span style="color:#6ECFF5;">SAT</span>Match</span>
+	<a class="item" href="/dashboard" target="_blank" >
+	<i class="users icon" href="/dashboard" target="_blank" ></i> Play!
 	</a>
 	<a class="item" href="/leaderboard" target="_blank" >
 	<i class="signal icon" href="/leaderboard" target="_blank"  ></i> Leaderboards
 	</a>
-	<a class="item" href="/dashboard" target="_blank" >
-	<i class="users icon" href="/dashboard" target="_blank" ></i> Play!
+	<a class="item" href="/about" target="_blank" >
+	 <i class="help icon" target="_blank"></i>About
 	</a>
+
 	<div class="right menu">
+<a class="item" id="logout-btn">
+	    <i class="off icon" target="_blank"></i> 
+	    Logout
+    </a>
+
+
 	</div>
 	</div>
 </template>
-
-
