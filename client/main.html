@@ -12,22 +12,25 @@
 </body>
 
 <template name="navbar">
-	<div id="nav" class="ui fixed transparent inverted pointing main menu">
+	<div id="nav" class="ui fixed inverted pointing main menu">
 	<span class="logo item"><i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;<span style="color:#6ECFF5;">SAT</span>Match</span>
-	<a class="item" href="/" target="_blank">
-		<i class="home icon" ></i> Home
+	<a class="item" href="/dashboard" target="_blank" >
+	<i class="users icon" href="/dashboard" target="_blank" ></i> Play!
 	</a>
 	<a class="item" href="/leaderboard" target="_blank" >
 	<i class="signal icon" href="/leaderboard" target="_blank"  ></i> Leaderboards
 	</a>
-	<a class="item" href="/dashboard" target="_blank" >
-	<i class="users icon" href="/dashboard" target="_blank" ></i> Play!
+	<a class="item" href="/about" target="_blank" >
+	 <i class="help icon" target="_blank"></i>About
 	</a>
-	<div class="right menu">
-		<a class="item" id="logout-btn" target="_blank" >
-	<i class="off icon" id="logout-btn" target="_blank"  ></i> Logout
 
-	</a>
+	<div class="right menu">
+<a class="item" id="logout-btn">
+	    <i class="off icon" target="_blank"></i> 
+	    Logout
+    </a>
+
+
 	</div>
 	</div>
 </template>
