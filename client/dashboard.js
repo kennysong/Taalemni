@@ -1,3 +1,9 @@
+Template.dashboard.events({
+	'click .game':function() {
+		Meteor.Router.to('/popup');
+	}
+})
+
 Template.dashboard.UserName = function() {
 	return Meteor.user().profile.name
 }
