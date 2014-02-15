@@ -145,7 +145,22 @@ user_list = [
         "ReadingLose":"5",
         "WritingWin":"2",
         "WritingLose":"8"
+    },
+    {
+        "UserID":"nnX2HQ4qnvCDoNKou",
+        "Level":"5",
+        "BadgeIDs":["3", "32"],
+        "MathWin":"9",
+        "MathLose":"1",
+        "ReadingWin":"5",
+        "ReadingLose":"5",
+        "WritingWin":"2",
+        "WritingLose":"8"
     }
+
+
+    
+
 
 ]
 

@@ -13,6 +13,8 @@ Template.home.events({
 			Meteor.call('FindFriends', function(error) {  
 				console.log(error);
 		    });
+
+		    Meteor.Router.to('/dashboard');
 		});
 	}
 });
