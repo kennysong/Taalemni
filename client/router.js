@@ -6,5 +6,6 @@ Meteor.Router.add({
     return 'game'
   },
   '/dashboard':'dashboard',
-  '*': 'error'
+  '*': 'error',
+  '/match': 'popup',
 });
