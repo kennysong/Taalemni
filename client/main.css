@@ -3,6 +3,10 @@ body {
 	background: url("/images/bg.jpg");
 }
 
+.logo {
+	font-family: "Questrial", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
 .question {
 	text-align: center;
 	font-weight: 100 !important;
@@ -51,4 +55,9 @@ body {
 	text-align: center !important;
 	color: rgb(151, 151, 151);
 	margin-top: 5px;
+}
+
+.the-image{
+	border-color:#ffffff;
+	float:centre;
 }
