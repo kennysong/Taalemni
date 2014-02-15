@@ -1,33 +1,40 @@
 <template name="home">
 	<center>
 	{{greeting}}
+	{{> facebook}}
+	{{> links}}
+	</center>
+</template>
 
-	<div class="ui">
-		<div class="">
-			<div class="">
-				<div id="facebook-login" class="ui labeled facebook icon button">
-	  <i class="facebook icon"></i>
-	  Facebook
-				</div>
+<template name="facebook">
+	<center>
+		<div class="spacing">
+			<div id="facebook-login" class="ui labeled facebook icon button">
+	  			<i class="facebook icon"></i>
+	  				Facebook
 			</div>
 		</div>
-		<div class="">
-			<div class="">
-				<a href="/about" target="_blank">
-					<div class="ui button">
+	</center>
+</template>
+
+<template name="links">
+	<center>
+		<div> </div>
+		<div class="ui breadcrumb">
+			<div class="spacing">
+				<a href="/about" target="_blank" >
+					<div class="ui blue button">
 						About
 					</div>
 				</a>
-			</div>
-			<div class="">
+				<div class="divider"> | </div>
 				<a href="http://sat.collegeboard.org/home">
-					<div class="ui button">
+					<div class="ui blue button">
 						SAT
-					</DIV>
+					</div>
 				</a>
 			</div>
 		</div>
-	</div>
-</center>
-
+	</center>
 </template>
+
