@@ -5,59 +5,60 @@
 <div style="margin:auto">
 	
 	<div id="timer-bar" class="ui green progress">
-
+{{#constant}}
 		<div class="bar" style="width:100%"></div>
 		<h2 id="timer"><span id="time">20</span> sec</h2>
+    {{/constant}}
 	</div>
+
 </div>
 <center>
 	<img class="player circular ui image" src="{{ SelfPic }}" style="float:left;">
 	<p class="score ui blue label" style="float:left;">{{ SelfScore }}</p>
+  <!-- <p class="name" style="float:left">{{ SelfName }}</p> -->
 	<img class="player circular ui image" src="{{ OpponentPic }}" style="float:right;">
 	<p class="score ui orange label" style="float:right;">{{ OpponentScore }}</p>
-
+<!--   <p class="name" style="float:right">{{ OpponentName }}</p> -->
 </center>
 
 <center>
-
 	<div class="question ui fluid segment">
 		<h3 style="font-weight:100;">{{ QuestionNumber }}. {{ Question }}</h3>
 	</div>
-
 </center>
 
 
 <div class="answers ui stackable three items" style="display: block;">
-
-  <div class="item">
+  <div id="OptionA" class="item">
     <div class="content">
       <div class="meta">A</div>
       <h1>{{ OptionA }}</h1>
     </div>
   </div>
 
-  <div class="item">
+  <div id="OptionB" class="item">
     <div class="content">
       <div class="meta">B</div>
        <h1>{{ OptionB }}</h1>
     </div>
   </div>
 
-  <div class="item">
+  <div id="OptionC" class="item">
     <div class="content">
       <div class="meta">C</div>
        <h1>{{ OptionC }}</h1>
     </div>
   </div>
 
-  <div class="item">
+
+  <div id="OptionD" class="item">
     <div class="content">
       <div class="meta">D</div>
        <h1>{{ OptionD }}</h1>
     </div>
   </div>
 
-  <div class="item">
+  <div id="OptionE" class="item">
     <div class="content">
       <div class="meta">E</div>
        <h1>{{ OptionE }}</h1>
@@ -69,6 +70,5 @@
 
 
 <p id="progress-text">Question {{ QuestionNumber }}/6</p>
-
 
 </template>
