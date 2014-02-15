@@ -136,7 +136,7 @@ user_list = [
         "WritingLose":"1"
     },
     {
-        "UserID":"3",
+        "UserID":"v8sJ6xWKynN93jhpv",
         "Level":"5",
         "BadgeIDs":["3", "32"],
         "MathWin":"9",
@@ -148,6 +148,7 @@ user_list = [
     }
 
 ]
+
 
 UsersHistory = new Meteor.Collection("users_history")
 
