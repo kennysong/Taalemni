@@ -59,7 +59,8 @@ body {
 #progress-text {
 	text-align: center !important;
 	color: rgb(151, 151, 151);
-	margin-top: 5px;
+	margin-top: -5px;
+	font-size: 14px;
 }
 
 .content {
@@ -74,7 +75,7 @@ body {
 	width: 700px !important;
 	height: 30px;
 	padding: 2px;
-	margin-top: 20px;
+	margin-top: 80px;
 	margin-bottom: 10px;
 }
 
@@ -97,3 +98,16 @@ h1 {
 	margin: 50px;
 }
 
+#nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.name {
+	font-weight: 100;
+	font-size: 22px;
+	position: relative;
+	top: 125px;
+	margin: 0px -50px;
+}

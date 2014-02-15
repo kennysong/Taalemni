@@ -2,14 +2,16 @@
 
   <div class="ui page grid masthead segment" style="background: transparent;">
     <div class="column">
-      <img class="player circular image dashboard-user-image" src="{{ UserPic }}"?
-      style=" margin-bottom: 2%;">
+      <img class="ui circular image dashboard-user-image" src="{{ UserPic }}"?
+      style=" margin: 3%;">
       <h1 class="ui inverted header" style="color: black;">
       {{ UserName }}
       </h1>
       <p style="color: black;">
+      Level = {{UserLevel}}
+      </p>
+      <p style="color: black;">
       Badges Won: None Yet
-      "{{ UserGameData }}"
       </p>
     </div>
   </div>
@@ -23,17 +25,17 @@
 
         <div class="column">
           <a class="ui fluid rounded green button" ;"> Critical Reading </a>
-          <p>Correct %</p>
+          <p>{{ReadWinPercentage}} %</p>
         </div>
 
         <div class="column">
           <a class="ui fluid rounded red button" ;">Mathematics</a>
-          <p>Correct %</p>
+          <p>{{MathWinPercentage}} %</p>
         </div>
 
         <div class="column">
           <a class="ui fluid rounded blue button">Writing</a>
-          <p>Correct %</p>
+          <p>{{WritWinPercentage}} %</p>
         </div>
 
       </div>

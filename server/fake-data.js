@@ -93,7 +93,11 @@ game_list = [
 		"QuestionIDs": ["x3h4PaqMpJFR7t5KA", "nPDRnXEztBWfMmqxx", "9S4WmuqGXWfJNGNBy", "qnHRs5ufFY4ZCBWgN", "uDYDgfEXr8xZiCJBp", "95b87ZcNqZ2c636Hg"],
 		"UserIDs": ["nnX2HQ4qnvCDoNKou", "9jNFCCh5EHhJcgFfH"],
 		"ScoreA": 0,
-		"ScoreB": 0
+		"ScoreB": 0,
+		'ADone': 0,
+		'BDone': 0,
+		'APresent':0,
+		'BPresent':0
 	}
 ];
 
@@ -113,7 +117,7 @@ user_list = [
         "UserID":"G98ZY4HE9QD3L8ccn",
         "Level":"3",
         "BadgeIDs":["323", "4332"],
-        "MathWin":"10",
+        "MathWin":"0",
         "MathLose":"0",
         "ReadingWin":"5",
         "ReadingLose":"5",
@@ -132,7 +136,7 @@ user_list = [
         "WritingLose":"1"
     },
     {
-        "UserID":"3",
+        "UserID":"v8sJ6xWKynN93jhpv",
         "Level":"5",
         "BadgeIDs":["3", "32"],
         "MathWin":"9",
@@ -144,6 +148,7 @@ user_list = [
     }
 
 ]
+
 
 UsersHistory = new Meteor.Collection("users_history")
 
