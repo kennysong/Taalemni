@@ -29,10 +29,15 @@ body {
 	color: rgb(151, 151, 151);
 	font-size: 20px;
 	font-weight: 300;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(109, 109, 109);
+	position: relative;
+	bottom: 41px;
 }
 
 .player {
-	width: 150px !important;
+	width: 140px !important;
 	margin: 30px;
 }
 
@@ -55,4 +60,28 @@ body {
 	text-align: center !important;
 	color: rgb(151, 151, 151);
 	margin-top: 5px;
+}
+
+.content {
+	font-size: 14px !important;
+}
+
+.answers .item {
+	height: 150px !important;
+}
+
+#timer-bar {
+	width: 700px !important;
+	height: 30px;
+	padding: 2px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.answers {
+	margin-bottom: 25px !important;
+}
+
+h1 {
+	font-weight: 100;
 }
