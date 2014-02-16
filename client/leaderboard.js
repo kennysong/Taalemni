@@ -7,8 +7,14 @@ Template.leaderboard.heading = function () {
 };
 */
 
+Template.Everyone.users = function(){
+	// friendInsert(Meteor.user);
+	return Meteor.users.find({}, {sort: {Level: -1}});
+};
 
-Template.list.users = function(){
+
+Template.Friends.users = function(){
+	// friendInsert(Meteor.user);
 	return Meteor.users.find({}, {sort: {Level: -1}});
 };
 

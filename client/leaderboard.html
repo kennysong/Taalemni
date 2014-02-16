@@ -1,10 +1,11 @@
 <template name="leaderboard">
 	<center>
-		<h3>
-		{{heading}}
+		<h3 style='margin-top:80px; margin-bottom: 50px; font-family: Questrial; font-size: 50px;'>
+			Leaderboard
 		</h3>
 		{{> buttons}}
-		{{> list}}
+		{{> Everyone}}
+		{{> Friends}}
 	</center>
 </template>
 
@@ -12,23 +13,50 @@
 <template name="buttons">
 	<center>
 		<div class="ui buttons">
-  			<div class="ui button" id="friends">Friends</div>
   			<div class="ui button" id="everyone">Everyone</div>
+  			<div class="ui button" id="friends">Friends</div>
 		</div>
 	</center>
 </template>
 
-<template name="list">
-	<div class="leaderboard" style="display:none">
-		{{#each users}}
-			{{> user}}
-		{{/each}}
+<template name="Everyone">
+	<div id="everyone" class="leaderboard" style="">
+	  <div class="ui one column divided grid" style = "max-width: 360px; margin-top : 1%; ">
+	    <div class="column">
+		  	<div class="ui vertical fluid menu" id="friend-list">
+				{{#each users}}
+
+				  	<div class="item">
+				    <a class="item">
+				      {{profile.name}}
+				      <div class="ui label">{{Level}}</div>
+				    </a>
+
+				{{/each}}
+				</div>
+			 </div>
+		</div>
   	</div>
 </template>
 
-<template name="user">
-  	<div class="user" {{selected}}>
-    	<!--span class="Name">{{name}}</span-->
-    	<span class="Level">{{Level}}</span>
+<template name="Friends">
+	<div id="friends" class="leaderboard" style="display:none">
+	  <div class="ui one column divided grid" style = "max-width: 360px; margin-top : 1%; ">
+	    <div class="column">
+		  	<div class="ui vertical fluid menu" id="friend-list">
+				{{#each users}}
+
+				  	<div class="item">
+				    <a class="item">
+				      {{profile.name}}
+				      <div class="ui label">{{Level}}</div>
+				    </a>
+
+				{{/each}}
+				</div>
+			 </div>
+		</div>
   	</div>
 </template>
+
+
