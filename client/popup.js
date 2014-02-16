@@ -2,6 +2,12 @@ Template.popup.SelfPic = function () {
 	return "https://graph.facebook.com/"+Meteor.user().services.facebook.username +"/picture?width=200&height=200";
 };
 
+Template.popup.friends = function() {
+	friends = Meteor.users.find({}, {limit: 10, sort: {Level: -1}});
+
+	return friends
+}
+
 Template.popup.events({
 	'click #with-friends' : function(){
 		console.log("clicked friends!");
