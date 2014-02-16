@@ -1,13 +1,22 @@
-var seconds;
-var maxseconds;
+
+var maxseconds = 20.0;
+var seconds = 0;
 var timerr;
 
 LogDone = function() {
 	console.log('LD')
 	GameID = Session.get('GameID');
+
+	if (!Meteor.user()) {
+		return;
+	}
 	UserID = Meteor.user()._id;
 
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
 
 	if (UserID == CurrentGame.UserIDs[0]) {
 		// Is User A
@@ -85,10 +94,14 @@ Template.game.rendered = function () {
 	Meteor.autorun(function() {
 
 		if (!(Meteor.user())) {
-			return 0;
+			return;
 		}
 
 		GameID = Session.get('GameID');
+		if (!(Meteor.user())) {
+			return;
+		}
+
 		UserID = Meteor.user()._id;
 
 		CurrentGame = Game.find(GameID).fetch()[0];
@@ -106,17 +119,24 @@ Template.game.rendered = function () {
 			Game.update(GameID, {$set: {'ADone':0, 'BDone':0}});
 		}
 
-		if (CurrentGame.APresent == 1 && CurrentGame.BPresent == 1) {
+		if (CurrentGame && CurrentGame.APresent == 1 && CurrentGame.BPresent == 1) {
 			RunQuestion();
 			Game.update(GameID, {$set: {'APresent':0, 'BPresent':0}});
 
 		}
 	});
 
+	if (!(Meteor.user())) {
+		return;
+	}
 	
 	UserID = Meteor.user()._id;
 
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
 
 	if (UserID == CurrentGame.UserIDs[0]) {
 		// Is User A
@@ -137,6 +157,10 @@ Template.game.events = {
 		Meteor.clearInterval(timerr);
 
 		GameID = Session.get('GameID');
+				if (!(Meteor.user())) {
+			return;
+		}
+
 		UserID = Meteor.user()._id;
 		CurrentGame = Game.find(GameID).fetch()[0];
 
@@ -154,6 +178,9 @@ Template.game.events = {
 		if (CurrentA == "A") {
 			console.log("CORRECT");
 			points = maxseconds + seconds;
+			console.log(seconds)
+			console.log(maxseconds)
+			console.log(points);
 			if (CurrentGame.UserIDs[0] == UserID) {
 				// Self is User A
 				Game.update(GameID, {$inc: {'ScoreA': points}}, function (e,n) {
@@ -199,6 +226,11 @@ Template.game.events = {
 		Meteor.clearInterval(timerr);
 
 		GameID = Session.get('GameID');
+
+		if (!(Meteor.user())) {
+			return;
+		}
+
 		UserID = Meteor.user()._id;
 		CurrentGame = Game.find(GameID).fetch()[0];
 
@@ -216,6 +248,9 @@ Template.game.events = {
 		if (CurrentA == "B") {
 			console.log("CORRECT");
 			points = maxseconds + seconds;
+			console.log(seconds)
+			console.log(maxseconds)
+			console.log(points);
 			if (CurrentGame.UserIDs[0] == UserID) {
 				// Self is User A
 				Game.update(GameID, {$inc: {'ScoreA': points}}, function (e, n) {
@@ -258,6 +293,11 @@ Template.game.events = {
 		Meteor.clearInterval(timerr);
 
 		GameID = Session.get('GameID');
+
+		if (!(Meteor.user())) {
+			return;
+		}
+
 		UserID = Meteor.user()._id;
 		CurrentGame = Game.find(GameID).fetch()[0];
 
@@ -275,6 +315,9 @@ Template.game.events = {
 		if (CurrentA == "C") {
 			console.log("CORRECT");
 			points = maxseconds + seconds;
+			console.log(seconds)
+			console.log(maxseconds)
+			console.log(points);
 			if (CurrentGame.UserIDs[0] == UserID) {
 				// Self is User A
 				Game.update(GameID, {$inc: {'ScoreA': points}}, function (e, n) {
@@ -320,6 +363,10 @@ Template.game.events = {
 		Meteor.clearInterval(timerr);
 
 		GameID = Session.get('GameID');
+		if (!(Meteor.user())) {
+			return;
+		}
+
 		UserID = Meteor.user()._id;
 		CurrentGame = Game.find(GameID).fetch()[0];
 
@@ -337,6 +384,9 @@ Template.game.events = {
 		if (CurrentA == "D") {
 			console.log("CORRECT");
 			points = maxseconds + seconds;
+			console.log(seconds)
+			console.log(maxseconds)
+			console.log(points);
 			if (CurrentGame.UserIDs[0] == UserID) {
 				// Self is User A
 				Game.update(GameID, {$inc: {'ScoreA': points}}, function (e,n) {
@@ -381,6 +431,11 @@ Template.game.events = {
 		Meteor.clearInterval(timerr);
 
 		GameID = Session.get('GameID');
+
+		if (!(Meteor.user())) {
+			return;
+		}
+
 		UserID = Meteor.user()._id;
 		CurrentGame = Game.find(GameID).fetch()[0];
 
@@ -398,6 +453,9 @@ Template.game.events = {
 		if (CurrentA == "E") {
 			console.log("CORRECT");
 			points = maxseconds + seconds;
+			console.log(seconds)
+			console.log(maxseconds)
+			console.log(points);
 			if (CurrentGame.UserIDs[0] == UserID) {
 				// Self is User A
 				Game.update(GameID, {$inc: {'ScoreA': points}}, function (e,n) {
@@ -438,8 +496,17 @@ Template.game.events = {
 
 Template.game.SelfScore = function() {
 	GameID = Session.get('GameID');
+	if (!Meteor.user()) {
+		return;
+	}
+
 	UserID = Meteor.user()._id;
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+	if (!CurrentGame) {
+		return ;
+	}
+
 	if (CurrentGame.UserIDs[0] == UserID) {
 		return CurrentGame.ScoreA;
 	} else {
@@ -449,8 +516,20 @@ Template.game.SelfScore = function() {
 
 Template.game.OpponentScore = function() {
 	GameID = Session.get('GameID');
+
+	if (!Meteor.user()) {
+		return;
+	}
+
 	UserID = Meteor.user()._id;
+
+
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+	if (!CurrentGame) {
+		return ;
+	}
+
 	if (CurrentGame.UserIDs[0] == UserID) {
 		return CurrentGame.ScoreB;
 	} else {
@@ -460,14 +539,31 @@ Template.game.OpponentScore = function() {
 
 
 Template.game.SelfPic = function () {
-	return "https://graph.facebook.com/"+Meteor.user().services.facebook.username +"/picture?width=200&height=200";
+	if (Meteor.user()) {
+			return "https://graph.facebook.com/"+Meteor.user().services.facebook.username +"/picture?width=200&height=200";
+	} else {
+		return;
+	}
 }
 
 Template.game.OpponentPic = function () {
 	GameID = Session.get('GameID');
+
+	if (!Meteor.user()) {
+		return;
+	}
+
 	UserID = Meteor.user()._id;
+
+
+
 	CurrentGame = Game.find(GameID).fetch()[0];
-	if (CurrentGame.UserIDs[0] == UserID) {
+
+		if (!CurrentGame) {
+		return ;
+	}
+
+	if (CurrentGame && CurrentGame.UserIDs[0] == UserID) {
 		OpponentID = CurrentGame.UserIDs[1];
 	} else {
 		OpponentID = CurrentGame.UserIDs[0];
@@ -475,26 +571,48 @@ Template.game.OpponentPic = function () {
 
 	Opponent = Meteor.users.find(OpponentID).fetch()[0];
 
-	return "https://graph.facebook.com/"+Opponent.services.facebook.username +"/picture?width=200&height=200";
+	if (Opponent) {
+			return "https://graph.facebook.com/"+Opponent.services.facebook.username +"/picture?width=200&height=200";
+
+	}
+
+	return;
+
 
 }
 
 Template.game.SelfName = function () {
-	return Meteor.user().profile.name.split(' ')[0];
+	if (Meteor.user()){
+			return Meteor.user().profile.name.split(' ')[0];
+	}
 
 }
 
 Template.game.OpponentName = function () {
 	GameID = Session.get('GameID');
+	if (!Meteor.user()) {
+		return;
+	}
 	UserID = Meteor.user()._id;
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+	if (!CurrentGame) {
+		return ;
+	}
+
 	if (CurrentGame.UserIDs[0] == UserID) {
 		OpponentID = CurrentGame.UserIDs[1];
 	} else {
 		OpponentID = CurrentGame.UserIDs[0];
 	}
 
+
+
 	Opponent = Meteor.users.find(OpponentID).fetch()[0];
+
+	if (!Opponent) {
+		return;
+	}
 
 	return Opponent.profile.name.split(' ')[0];
 }
@@ -514,6 +632,10 @@ Template.game.Question = function () {
 	GameID = Session.get('GameID');
 	CurrentGame = Game.find(GameID).fetch()[0];
 
+	if (!CurrentGame) {
+		return ;
+	}
+
 	QuestionID = CurrentGame.QuestionIDs[QuestionNumber - 1];
 
 	CurrentQ = Question.find(QuestionID).fetch()[0];
@@ -524,6 +646,11 @@ Template.game.Question = function () {
 Template.game.OptionA = function() {
 	GameID = Session.get('GameID');
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
+
 	QuestionID = CurrentGame.QuestionIDs[QuestionNumber - 1];
 	CurrentQ = Question.find(QuestionID).fetch()[0];
 
@@ -533,6 +660,11 @@ Template.game.OptionA = function() {
 Template.game.OptionB = function() {
 	GameID = Session.get('GameID');
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
+
 	QuestionID = CurrentGame.QuestionIDs[QuestionNumber - 1];
 	CurrentQ = Question.find(QuestionID).fetch()[0];
 
@@ -542,6 +674,11 @@ Template.game.OptionB = function() {
 Template.game.OptionC = function() {
 	GameID = Session.get('GameID');
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
+
 	QuestionID = CurrentGame.QuestionIDs[QuestionNumber - 1];
 	CurrentQ = Question.find(QuestionID).fetch()[0];
 
@@ -551,6 +688,11 @@ Template.game.OptionC = function() {
 Template.game.OptionD = function() {
 	GameID = Session.get('GameID');
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
+
 	QuestionID = CurrentGame.QuestionIDs[QuestionNumber - 1];
 	CurrentQ = Question.find(QuestionID).fetch()[0];
 
@@ -560,6 +702,11 @@ Template.game.OptionD = function() {
 Template.game.OptionE = function() {
 	GameID = Session.get('GameID');
 	CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (!CurrentGame) {
+		return ;
+	}
+
 	QuestionID = CurrentGame.QuestionIDs[QuestionNumber - 1];
 	CurrentQ = Question.find(QuestionID).fetch()[0];
 
