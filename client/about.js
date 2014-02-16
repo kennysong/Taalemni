@@ -1,5 +1,5 @@
 Template.about.heading = function () {
-	return "What is SATMatch?";
+	return "What is taalemni";
 };
 
 Template.about.text = function () {

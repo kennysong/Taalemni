@@ -1,12 +1,13 @@
 Meteor.Router.add({
   '/': 'home',
-  '/about': function() {
+  '/about': function () {
     console.log('asdf')
-    console.log($('#about'))
     $('.navitem').removeClass('active');
+    console.log("#about");
     $('#about').addClass('active');
-    return 'about'
-  },
+    console.log("#about");
+    return 'about';
+},
   '/popup' : 'popup',
   '/game/:id': function(id) {
     Session.set('GameID', id);
