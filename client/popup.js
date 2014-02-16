@@ -12,5 +12,31 @@ Template.popup.events({
 	'click #no-friends' : function(){
 		console.log("no friends");
 		/*Implement global search here*/
+	},
+
+	'click .person' : function(e) {
+		console.log('person click!')
+		console.log(e.currentTarget.id)
+
+		OpponentID = e.currentTarget.id;
+		UserID = Meteor.user()._id;
+
+		Questions = Question.find({}, {'limit': 6}).fetch();
+		QuestionIDs = [];
+
+		for (i = 0; i < Questions.length; i++) {
+			QuestionIDs[i] = Questions[i]._id;
+		}
+
+		console.log(QuestionIDs)
+
+		// Create game object
+
+		GameID = Game.insert({'UserIDs':[UserID, OpponentID], 'QuestionIDs':QuestionIDs, 'ScoreA':0, 'ScoreB':0, 
+			'ADone':0, 'BDone':0, 'APresent':0, 'BPresent':0});
+
+		Meteor.Router.to('/game/'+GameID);
+
+
 	}
 });
