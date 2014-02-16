@@ -26,19 +26,6 @@
         }
     }, 
     {
-        "Category": "math", 
-        "Answer": "C", 
-        "Explanation": "Because", 
-        "Question": "In a community of 416 people, each person owns a dog or a cat or both. If there are 316 dog owners and 280 cat owners, how many of the dog owners own no cat?", 
-        "Options": {
-            "A": "36", 
-            "C": "136", 
-            "B": "100", 
-            "E": "316", 
-            "D": "180"
-        }
-    }, 
-    {
         "Category": "cr", 
         "Answer": "D", 
         "Explanation": "", 
