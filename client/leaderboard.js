@@ -21,7 +21,7 @@ Template.Friends.users = function(){
 Template.buttons.events({
 	'click #friends' : function(){
 		$(".leaderboard").slideToggle("slow");
-		UserList();
+		// UserList();
 		/*console.log("clicked friends!")*/
 		/*Implement switch to friends list here*/
 	},
