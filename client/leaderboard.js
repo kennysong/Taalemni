@@ -17,12 +17,16 @@ function friendInsert(array){ /*Meteor.user*/
 		};
 };
 
-Template.list.users = function(){
-	friendInsert(Meteor.user);
+Template.Everyone.users = function(){
+	// friendInsert(Meteor.user);
 	return Meteor.users.find({}, {sort: {Level: -1}});
 };
 
 
+Template.Friends.users = function(){
+	// friendInsert(Meteor.user);
+	return Meteor.users.find({}, {sort: {Level: -1}});
+};
 
 Template.buttons.events({
 	'click #friends' : function(){
