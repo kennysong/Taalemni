@@ -1,4 +1,6 @@
 Template.popup.SelfPic = function () {
+	
+	if (!Meteor.user()) {return};
 	return "https://graph.facebook.com/"+Meteor.user().services.facebook.username +"/picture?width=200&height=200";
 };
 
@@ -21,6 +23,7 @@ Template.popup.events({
 	},
 
 	'click .person' : function(e) {
+
 		console.log('person click!')
 		console.log(e.currentTarget.id)
 

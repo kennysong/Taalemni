@@ -1,6 +1,5 @@
-
 var maxseconds = 20.0;
-var seconds = 0;
+var seconds = maxseconds;
 var timerr;
 
 LogDone = function() {
@@ -81,9 +80,48 @@ NextQuestion = function () {
 }
 
 
+Template.game.created = function () {
+
+	Session.set('ONE', 1);
+
+	setInterval(function() {
+
+		if (!Meteor.user()) {
+			return;
+		}
+
+		UserID = Meteor.user()._id;
+
+		GameID = Session.get('GameID');
+
+		if (UserID == CurrentGame.UserIDs[0]) {
+		// Is User A
+		console.log('User A Present');
+		Game.update(GameID, {$set: {'APresent':1}});
+
+		} else {
+			// Is User B
+			console.log('User B Present');
+			Game.update(GameID, {$set: {'BPresent':1}});
+		}
+
+		CurrentGame = Game.find(GameID).fetch()[0];
+
+		if (CurrentGame && CurrentGame.APresent == 1 && CurrentGame.BPresent == 1 && Session.get('ONE') == 1) {
+			console.log('BEGINBEGINBEGINBEGINBEGINBEGINBEGINBEGIN')
+			RunQuestion();
+			Session.set('ONE', 0);
+			Game.update(GameID, {$set: {'APresent':0, 'BPresent':0}});
+		}
+	}, 1000)
+
+}
+
 
 Template.game.rendered = function () {
-	if(this._rendered) {
+
+	setTimeout(function() {
+		if(this._rendered) {
       return 0;
     }
 
@@ -119,11 +157,6 @@ Template.game.rendered = function () {
 			Game.update(GameID, {$set: {'ADone':0, 'BDone':0}});
 		}
 
-		if (CurrentGame && CurrentGame.APresent == 1 && CurrentGame.BPresent == 1) {
-			RunQuestion();
-			Game.update(GameID, {$set: {'APresent':0, 'BPresent':0}});
-
-		}
 	});
 
 	if (!(Meteor.user())) {
@@ -148,6 +181,9 @@ Template.game.rendered = function () {
 		console.log('User B Present');
 		Game.update(GameID, {$set: {'BPresent':1}});
 	}
+
+	}, 2500);
+	
 }
 
 Template.game.events = {
