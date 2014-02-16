@@ -1,7 +1,7 @@
-Taeelemni
+Taalemni
 ============
 
-NYUAD International Hackathon 2014: Taeelemni..teachME.
+NYUAD International Hackathon 2014: Taalemni..teachME.
 
 Batu Aytemiz, Beatrice Ionascu, Talha Javed, Dorra Mlouhi, Kenny Song, Asyrique Thevendran
 
