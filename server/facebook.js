@@ -48,15 +48,6 @@ Meteor.methods({
         Meteor.users.update(id, {$set: {'BadgeIDs': [], 'Level': 1, 'MathWin': 0, 'MathLose': 0, 
             'ReadingWin': 0, 'ReadingLose': 0, 'WritingWin': 0, 'WritingLose': 0, 'Friends':data['data']}});
         friendInsert();
-    },
-
-    FriendIdArray: function() {
-        obj_array = [];
-        for (var i = 0; i < 30; i++){
-            obj_array.push(Meteor.users.find().fetch()[i]);
-        }
-        console.log(obj_array)
-        return obj_array;
     }
 });
 
@@ -68,18 +59,18 @@ Meteor.publish("userData", function() {
 });
 
 //Publish the Level of field
-// Meteor.publish("levelData", function() {
-//     return Meteor.users.find({id}), {fields: {
-//         'Level': 1, 'name' : 1
-//     }};
-// });
+Meteor.publish("levelData", function() {
+    return Meteor.users.find({}, {fields: {
+        'Level': 1, "name" : 1
+    }});
+});
 
 //Add friends to users Collection
 friendInsert = function() {
     for (var i = 0; i < 30; i++)
-        id_array = []
         if (Meteor.users.find({"profile":{"name":Meteor.user().Friends[i].name}}).count() == 0) {
             id = Meteor.users.insert({"profile":{"name":Meteor.user().Friends[i].name}, "Level": getRandomInt(1,41)});
+            console.log(id)
         };
 };
 
